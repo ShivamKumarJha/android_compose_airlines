@@ -1,4 +1,4 @@
-package com.shivamkumarjha.airlinescompose
+package com.shivamkumarjha.airlinescompose.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
