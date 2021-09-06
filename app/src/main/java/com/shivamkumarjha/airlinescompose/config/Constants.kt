@@ -10,4 +10,11 @@ object Constants {
 
     //Database
     const val DB_NAME = "app_database.db"
+
+    //Navigation
+    const val NAV_MAIN ="NAV_MAIN"
+    const val NAV_INFO ="NAV_INFO"
+
+    //Arg
+    const val ARG_ID ="ARG_ID"
 }
