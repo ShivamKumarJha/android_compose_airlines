@@ -19,6 +19,7 @@ import com.google.accompanist.navigation.material.ExperimentalMaterialNavigation
 import com.google.accompanist.navigation.material.ModalBottomSheetLayout
 import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
 import com.shivamkumarjha.airlinescompose.config.Constants
+import com.shivamkumarjha.airlinescompose.ui.info.InfoScreen
 
 @OptIn(ExperimentalAnimationApi::class, ExperimentalMaterialNavigationApi::class)
 @Composable
@@ -74,7 +75,9 @@ fun MainNavigation() {
                 ) { backStackEntry ->
                     val id = backStackEntry.arguments?.getString(Constants.ARG_ID)
                     if (id != null) {
-
+                        InfoScreen(id) {
+                            navController.navigateUp()
+                        }
                     }
                 }
             }
