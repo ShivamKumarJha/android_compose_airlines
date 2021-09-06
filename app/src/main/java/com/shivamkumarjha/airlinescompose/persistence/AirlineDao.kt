@@ -1,8 +1,8 @@
 package com.shivamkumarjha.airlinescompose.persistence
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.shivamkumarjha.airlinescompose.model.ParsedAirline
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface AirlineDao {
@@ -20,5 +20,5 @@ interface AirlineDao {
     suspend fun deleteAirline(id: Int)
 
     @Query("SELECT * from airlines ORDER BY established DESC")
-    fun getAirlines(): Flow<List<ParsedAirline>>
+    fun getAirlines(): LiveData<List<ParsedAirline>>
 }

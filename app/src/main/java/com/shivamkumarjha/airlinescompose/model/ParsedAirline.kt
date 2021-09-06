@@ -15,7 +15,5 @@ data class ParsedAirline(
     val headQuarters: String,
     val website: String,
     val established: Int,
-    val totalPassengers: Int,
-    val totalPages: Int,
     var page: Int? = null
 )
