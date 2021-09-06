@@ -18,11 +18,11 @@ interface AirlineDao {
     suspend fun deleteAirline(airline: ParsedAirline)
 
     @Query("DELETE FROM airlines WHERE id = :id")
-    suspend fun deleteAirline(id: Int)
+    suspend fun deleteAirline(id: String)
 
     @Query("SELECT * from airlines WHERE id = :id LIMIT 1")
-    fun getAirline(id: Int): Flow<ParsedAirline>
+    fun getAirline(id: String): Flow<ParsedAirline>
 
-    @Query("SELECT * from airlines ORDER BY established DESC")
+    @Query("SELECT * from airlines ORDER BY page ASC")
     fun getAirlines(): LiveData<List<ParsedAirline>>
 }

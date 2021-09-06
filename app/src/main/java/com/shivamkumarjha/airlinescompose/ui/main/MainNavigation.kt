@@ -50,12 +50,14 @@ fun MainNavigation() {
                         slideOutHorizontally(targetOffsetX = { 1000 }, animationSpec = tween(700))
                     }
                 ) {
-
+                    MainScreen(viewModel) {
+                        handleInteractionEvents(it, navController)
+                    }
                 }
                 composable(
                     "${Constants.NAV_INFO}/{${Constants.ARG_ID}}",
                     arguments = listOf(navArgument(Constants.ARG_ID) {
-                        type = NavType.IntType
+                        type = NavType.StringType
                     }),
                     enterTransition = { _, _ ->
                         slideInHorizontally(initialOffsetX = { 1000 }, animationSpec = tween(700))
@@ -70,9 +72,9 @@ fun MainNavigation() {
                         slideOutHorizontally(targetOffsetX = { 1000 }, animationSpec = tween(700))
                     }
                 ) { backStackEntry ->
-                    val id = backStackEntry.arguments?.getInt(Constants.ARG_ID)
+                    val id = backStackEntry.arguments?.getString(Constants.ARG_ID)
                     if (id != null) {
-                        
+
                     }
                 }
             }

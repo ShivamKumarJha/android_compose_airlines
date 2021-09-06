@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Airlines Compose</string>
+    <string name="jumpBottom">Jump to bottom</string>
+    <string name="jumpTop">Jump to top</string>
 </resources>

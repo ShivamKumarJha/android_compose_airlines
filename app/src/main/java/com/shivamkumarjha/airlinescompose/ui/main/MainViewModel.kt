@@ -25,6 +25,10 @@ class MainViewModel @Inject constructor(
         emitSource(airlineDao.getAirlines())
     }
 
+    init {
+        getPassengers(0)
+    }
+
     fun getPassengers(page: Int) {
         viewModelScope.launch(ioDispatcher) {
             airlineRepository.getPassengers(page).collect {
